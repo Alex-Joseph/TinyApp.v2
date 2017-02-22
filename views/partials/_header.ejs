@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<% if (locals.email) { %>
+  <!-- user is logged in -->
+  <a>
+    <%= email %>
+    <form action="/logout" method="POST">
+      <input type="submit" value="Logout">
+    </form>
+  </a>
+  <div class="navBar" style="#000080">
+    <button type="button" name="register"><a href="/register">Register</a></button>
+    <button type="button" name="login"><a href="/login">Login</a></button>
+    <button type="button" name="urls"><a href="/urls">Tiny URL Library</a></button>
+    <button type="button" name="urls_new"><a href="/urls/new">Create a Tiny URL</a></button>
+  </div>
+<!-- user needs to register or login -->
+ <% } else { %>
+   <h3>
+     <!-- login form -->
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+  </h3>
+<% } %>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TinyApp - All urls</title>
+  </head>
+  <header>
+    <%-
+      include('./partials/_header', {
+        userId: locals.userId ? userId : null
+      })
+    %>
+  </header>
+  <body style="font-size:20px; padding:50px;">
+    <h1>Your Short URLs</h1>
+    <ul>
+      <p>
+        <% for (var k in allUrls) { %>
+        <li>
+          <a href="<%= allUrls[k] %>"><%= k %></a> &rarr; <a href="<%= allUrls[k] %>"><%= allUrls[k] %></a>
+          <form method="POST" action="/urls/<%= k %>/delete">
+            <input type="submit" value="Delete">
+          </form>
+          <a href="/urls/u/<%= k %>"> Edit </a>
+        </li><br>
+        <% }; %>
+      </p>
+    </ul>
+    <a href="/urls/new">Get new url</a>
+  </body>
+</html>

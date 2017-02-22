@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body style="font-size:20px; padding:50px;">
+    <header>
+      <%-
+        include('./partials/_header', {
+          userId: locals.userId ? userId : null
+        })
+      %>
+    </header>
+    <h1>Welcome to our Tiny site!</h1>
+    <p>Create Tiny URLs that you can share with your friends!</p>
+  </body>
+</html>

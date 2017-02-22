@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Your new shiny Tiny URL</title>
+  </head>
+  <body style="font-size:20px; padding:50px;">
+    <header>
+      <% include ./partials/_header %>
+    </header>
+    <h1>ShortURL: <%= shortURL %></h1>
+      <form method="POST" action="/urls/<%= shortURL%>/update">
+        <input type:"text" name="longURL" value="<%= urls[shortURL] %>" placeholder="<%= url %>" style="width: 250px">
+        <input type="submit" value="Update">
+      </form><br>
+      <form method="POST" action="/urls/<%= shortURL %>/delete">
+        <input type="submit" value="Delete">
+      </form>
+  </body>
+</html>
